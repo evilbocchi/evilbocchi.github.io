@@ -102,7 +102,7 @@ const GlitchySquares: React.FC<GlitchySquaresProps> = ({ cursorPosition }) => {
                                 ...square,
                                 active: true,
                                 // Use a gradient intensity for more visual interest
-                                opacity: 0.7 + Math.random() * 0.3,
+                                opacity: 0.3 + Math.random() * 0.3,
                                 color: colors[Math.floor(Math.random() * colors.length)],
                                 transitionDelay: transDelay,
                                 transitionDuration: transDuration
@@ -231,7 +231,7 @@ const GlitchySquares: React.FC<GlitchySquaresProps> = ({ cursorPosition }) => {
     }, [cursorPosition, dimensions, squares.length, colors]); return (
         <div
             ref={containerRef}
-            className="fixed top-0 left-0 w-full h-full z-20 pointer-events-none"
+            className="fixed top-0 left-0 w-full h-full pointer-events-none"
         >
             {squares.map(square => {
                 if (!square.active) return null;
@@ -257,6 +257,7 @@ const GlitchySquares: React.FC<GlitchySquaresProps> = ({ cursorPosition }) => {
                             border: '1px solid rgba(255, 255, 255, 0.4)', // Clearer outline for better visibility
                             boxShadow: 'inset 0 0 2px rgba(255, 255, 255, 0.3)', // Inner glow effect
                             boxSizing: 'border-box',
+                            zIndex: -5
                         }}
                     />
                 );

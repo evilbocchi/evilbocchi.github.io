@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Supreme';
+    src: url('/fonts/Supreme-Variable.ttf') format('truetype');
+}
 
 :root {
     --primary: #ff00ff;
@@ -8,7 +12,7 @@
     --accent-3: #ff3300;
     --dark: #0a0a16;
     --light: #f0f0ff;
-    font-family: 'Poppins', system-ui, sans-serif;
+    font-family: 'Supreme', system-ui, sans-serif;
     line-height: 1.5;
     font-weight: 400;
     color-scheme: light dark;
@@ -38,11 +42,6 @@ h1 {
     font-size: 3.5rem;
     line-height: 1.1;
     font-weight: 800;
-    background: linear-gradient(90deg, var(--primary), var(--accent-1), var(--accent-2), var(--accent-3));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient 8s ease infinite;
-    background-size: 300% 300%;
 }
 
 @keyframes gradient {
@@ -131,78 +130,6 @@ h1 {
     }
 }
 
-/* Glitch effect */
-.glitch-text {
-    position: relative;
-}
-
-.glitch-text::before,
-.glitch-text::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    clip: rect(44px, 450px, 56px, 0);
-}
-
-.glitch-text::before {
-    left: 2px;
-    text-shadow: -1px 0 #00ffff;
-    animation: glitch-anim-1 2s infinite linear alternate-reverse;
-}
-
-.glitch-text::after {
-    left: -2px;
-    text-shadow: -1px 0 #ff00ff;
-    animation: glitch-anim-2 3s infinite linear alternate-reverse;
-}
-
-@keyframes glitch-anim-1 {
-    0% {
-        clip: rect(20px, 9999px, 76px, 0);
-    }
-
-    25% {
-        clip: rect(53px, 9999px, 3px, 0);
-    }
-
-    50% {
-        clip: rect(94px, 9999px, 98px, 0);
-    }
-
-    75% {
-        clip: rect(40px, 9999px, 18px, 0);
-    }
-
-    100% {
-        clip: rect(38px, 9999px, 10px, 0);
-    }
-}
-
-@keyframes glitch-anim-2 {
-    0% {
-        clip: rect(19px, 9999px, 28px, 0);
-    }
-
-    25% {
-        clip: rect(19px, 9999px, 98px, 0);
-    }
-
-    50% {
-        clip: rect(67px, 9999px, 89px, 0);
-    }
-
-    75% {
-        clip: rect(10px, 9999px, 100px, 0);
-    }
-
-    100% {
-        clip: rect(95px, 9999px, 5px, 0);
-    }
-}
-
 @keyframes fade-in-down {
     0% {
         opacity: 0;
@@ -222,39 +149,6 @@ h1 {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-.animated-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.animated-bg::before,
-.animated-bg::after {
-    content: '';
-    position: absolute;
-    width: 150vw;
-    height: 150vh;
-    border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.15;
-    animation: move 15s infinite alternate ease-in-out;
-}
-
-.animated-bg::before {
-    background: var(--accent-1);
-    top: -50%;
-    left: -25%;
-}
-
-.animated-bg::after {
-    background: var(--primary);
-    bottom: -50%;
-    right: -25%;
-}
 
 @keyframes move {
     0% {
@@ -323,6 +217,20 @@ button:hover {
 button:focus,
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Mix blend mode fixes for scrolling */
+.mix-blend-container {
+    isolation: isolate;
+    transform: translateZ(0);
+}
+
+/* Ensure proper stacking context for parallax elements */
+.parallax-element {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 @media (prefers-color-scheme: light) {

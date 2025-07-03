@@ -5,7 +5,6 @@ import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
 import GlitchySquares from './components/GlitchySquares';
 import HomePage from './components/HomePage';
-import Navbar from './components/Navbar';
 import ProjectsPage from './components/ProjectsPage';
 import SkillsPage from './components/SkillsPage';
 
@@ -64,7 +63,6 @@ function App() {
             <GlitchySquares cursorPosition={cursorPosition} />
 
             <div className="min-h-screen text-white noise-effect">
-                <div className="animated-bg"></div>
                 <div
                     className="pointer-events-none fixed top-0 left-0 w-full h-full z-10 opacity-50"
                     style={{
@@ -72,7 +70,6 @@ function App() {
             rgba(255, 0, 255, 0.15), transparent)`
                     }}
                 ></div>
-                <Navbar />
                 <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <Routes>
                         <Route path="/" element={<HomePage />} />
