@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @tailwind utilities;
 
 @font-face {
@@ -246,4 +247,8 @@ button:focus-visible {
     button {
         background-color: #f9f9f9;
     }
+}
+
+.font-cursive {
+    font-family: 'Lobster', cursive;
 }

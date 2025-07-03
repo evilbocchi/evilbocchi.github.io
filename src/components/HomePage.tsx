@@ -1,19 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 const HomePage = () => {
-    const [isVisible, setIsVisible] = useState(false);
     const [imageLoaded, setImageLoaded] = useState(false);
-    const profileRef = useRef<HTMLDivElement>(null);
     const backgroundRef = useRef<HTMLImageElement>(null);
     const logoRef = useRef<HTMLImageElement>(null);
     const logoPaddingRef = useRef<HTMLDivElement>(null);
-
-    // Animation effect on mount
-    useEffect(() => {
-        setIsVisible(true);
-    }, []);
 
     // Function to adjust logo margin
     const adjustLogoPadding = () => {
@@ -67,13 +58,12 @@ const HomePage = () => {
     }, []);
 
     return (
-        <div className="min-h-screen relative">
+        <div className={`min-h-screen relative duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
             <img
                 ref={backgroundRef}
                 src="/mood.jpg"
                 alt="Background"
-                className={`fixed top-0 left-0 w-full h-[110vh] object-cover transition-opacity duration-1000 parallax-element ${imageLoaded ? 'opacity-50' : 'opacity-0'
-                    }`}
+                className={`fixed top-0 left-0 w-full h-[110vh] object-cover transition-opacity duration-1000 parallax-element ${imageLoaded ? 'opacity-30' : 'opacity-0'}`}
                 onLoad={() => setImageLoaded(true)}
             />
 
@@ -88,7 +78,7 @@ const HomePage = () => {
                 onLoad={adjustLogoPadding}
             />
 
-            <div ref={logoPaddingRef}></div>
+            <div ref={logoPaddingRef} className='duration-1000'></div>
 
             <div className="grid grid-cols-4 gap-0 scaffold-top-offset">
                 <div className="scaffold">
@@ -100,8 +90,8 @@ const HomePage = () => {
 
                 <div className="scaffold"></div>
                 <div className="scaffold"></div>
-                <div className="scaffold scaffold-glass">
-                    <h1>Who Am I?</h1>
+                <div className="scaffold">
+                    <h1 className='mix-blend-difference'>Who Am I?</h1>
                     <p>
                         I'm an indie developer and AI enthusiast who loves building things that
                         blend creativity with code. Whether it's training neural networks,
@@ -127,100 +117,150 @@ const HomePage = () => {
                 <div className="scaffold"></div>
 
                 <div className="scaffold"></div>
-                <div className="scaffold scaffold-glass">
-                    <h1 className='scaffold-offset'>What I Build</h1>
-                    <p className='scaffold-offset'>
-                        <h2>JME</h2>
-                        <blockquote>Build your money-making empire. Uncover the world of Obbysia.</blockquote>
-                        <p>
-                            JME is an immersive Roblox game where players create and expand their
-                            own virtual empires. Designed for replayability and community engagement,
-                            JME blends tycoon mechanics with unique challenges and a vibrant world.
-                        </p>
-                        <p>Highlights: </p>
+                <div className="scaffold">
+                    <h1 className='mix-blend-difference'>What I Build</h1>
+                    <h2>JME</h2>
+                    <blockquote className='italic font-cursive text-center'>
+                        Build your money-making empire. Uncover the world of Obbysia.
+                    </blockquote>
+                    <p>
+                        JME is an immersive Roblox game where players create and expand their
+                        own virtual empires. Designed for replayability and community engagement,
+                        JME blends tycoon mechanics with unique challenges and a vibrant world.
                     </p>
+                    <b>Highlights:</b>
+                    <ul>
+                        <li><b>1M+ visits</b> and hundreds of thousands of unique players</li>
+                        <li>Built with Lua, TypeScript, and Roblox Studio</li>
+                        <li>Features continuous updates, new content, and community-driven improvements</li>
+                        <li>Automated CI/CD pipeline using GitHub Actions for stable releases</li>
+                        <li>Open-source with a welcoming contributor community</li>
+                    </ul>
+                    <p><b>Tech Stack:</b> Lua, TypeScript, Roblox Studio</p>
+                    <b>What I Did:</b>
+                    <ul>
+                        <li>Led end-to-end development: game design, scripting, UI/UX, deployment, and updates</li>
+                        <li>Implemented core gameplay mechanics and progression systems</li>
+                        <li>Managed community feedback and integrated feature requests</li>
+                        <li>Maintained code quality and project stability with automated workflows</li>
+                    </ul>
+                    <a href="https://github.com/evilbocchi/jme" className="text-blue-500 hover:underline">View on GitHub</a>
+                    <div className='scaffold-spacing'></div>
+                </div>
+                <div className="scaffold">
+                    <h1 className='mix-blend-difference'>Other Projects</h1>
+                    <ul>
+                        <li>
+                            <a href='https://github.com/Unreal-Works/monsters-awakening'>Monsters Awakening</a>: An innovative Roblox game featuring dungeons and monsters, featuring unique mechanics and engaging gameplay.
+                        </li>
+                        <li>
+                            <a href='https://github.com/evilbocchi/alyanum'>AlyaNum</a>: A big number library for Lua beating every other competitor in performance, yet has an easy-to-use API.
+                        </li>
+                        <li>
+                            <a href='https://github.com/Unreal-Works/thenilworld'>thenilworld</a>: An upcoming open-world RPG game on Roblox, featuring a world full of lore, quests, and adventures. Currently in development.
+                        </li>
+                    </ul>
+                </div>
+                <div className="scaffold"></div>
+
+                <div className="scaffold"></div>
+                <div className="scaffold"></div>
+                <div className="scaffold">
+                    <h1 className='mix-blend-difference'>What I Use</h1>
+                    <p>
+                        I love using tools that enhance my workflow and creativity. Here are some of my favorites:
+                    </p>
+                    <ul>
+                        <li>
+                            <b>Programming Languages: </b>
+                            Lua <img src='lua.png' alt='Lua Logo' className='inline-block align-text-bottom' />,
+                            TypeScript <img src='typescript.png' alt='TypeScript Logo' className='inline-block align-text-bottom' />,
+                            Python <img src='python.png' alt='Python Logo' className='inline-block align-text-bottom' />,
+                            JavaScript <img src='javascript.png' alt='JavaScript Logo' className='inline-block align-text-bottom' />,
+                            Java <img src='java.png' alt='Java Logo' className='inline-block align-text-bottom' />
+                        </li>
+                        <li>
+                            <b>Game Development: </b>
+                            Roblox Studio <img src='roblox_studio.png' alt='Roblox Studio Logo' className='inline-block align-text-bottom' />,
+                            Rojo <img src='rojo.png' alt='Rojo Logo' className='inline-block align-text-bottom' />,
+                            Godot <img src='godot.png' alt='Godot Logo' className='inline-block align-text-bottom' />,
+                            Unity <img src='unity.png' alt='Unity Logo' className='inline-block align-text-bottom' />
+                        </li>
+                        <li>
+                            <b>AI & Machine Learning: </b>
+                            PyTorch <img src='pytorch.png' alt='PyTorch Logo' className='inline-block align-text-bottom' />,
+                            TensorFlow <img src='tensorflow.png' alt='TensorFlow Logo' className='inline-block align-text-bottom' />,
+                            scikit-learn <img src='scikit_learn.png' alt='scikit-learn Logo' className='inline-block align-text-bottom' />,
+                            Pandas <img src='pandas.png' alt='Pandas Logo' className='inline-block align-text-bottom' />,
+                            Matplotlib <img src='matplotlib.png' alt='Matplotlib Logo' className='inline-block align-text-bottom' />
+                        </li>
+                        <li>
+                            <b>Web: </b>
+                            React <img src='react.png' alt='React Logo' className='inline-block align-text-bottom' />,
+                            Node.js <img src='nodejs.png' alt='Node.js Logo' className='inline-block align-text-bottom' />,
+                            Vite <img src='vite.png' alt='Vite Logo' className='inline-block align-text-bottom' />,
+                            Tailwind CSS <img src='tailwindcss.png' alt='Tailwind CSS Logo' className='inline-block align-text-bottom' />,
+                            Express <img src='expressjs.png' alt='Express Logo' className='inline-block align-text-bottom' />
+                        </li>
+                        <li>
+                            <b>DevOps & Tools: </b>
+                            GitHub Actions <img src='github_actions.png' alt='GitHub Actions Logo' className='inline-block align-text-bottom' />,
+                            Docker <img src='docker.png' alt='Docker Logo' className='inline-block align-text-bottom' />,
+                            VS Code <img src='vscode.png' alt='VS Code Logo' className='inline-block align-text-bottom' />
+                        </li>
+                        <li>
+                            <b>Databases: </b>
+                            MySQL <img src='mysql.png' alt='MySQL Logo' className='inline-block align-text-bottom' />,
+                            MongoDB <img src='mongodb.png' alt='MongoDB Logo' className='inline-block align-text-bottom' />,
+                            NoSQL <img src='nosql.png' alt='NoSQL Logo' className='inline-block align-text-bottom' />
+                        </li>
+                        <li>
+                            <b>Data Visualization: </b>
+                            Plotly <img src='plotly.png' alt='Plotly Logo' className='inline-block align-text-bottom' />,
+                            Tableau <img src='tableau.png' alt='Tableau Logo' className='inline-block align-text-bottom' />
+                        </li>
+                        <li>
+                            <b>Other Tools: </b>
+                            Canva <img src='canva.png' alt='Canva Logo' className='inline-block align-text-bottom' />,
+                            Figma <img src='figma.png' alt='Figma Logo' className='inline-block align-text-bottom' />,
+                            Blender <img src='blender.png' alt='Blender Logo' className='inline-block align-text-bottom' />,
+                            OBS <img src='obs.png' alt='OBS Logo' className='inline-block align-text-bottom' />,
+                            GIMP <img src='gimp.png' alt='GIMP Logo' className='inline-block align-text-bottom' />
+                        </li>
+                    </ul>
+                </div>
+                <div className="scaffold"></div>
+
+                <div className="scaffold"></div>
+                <div className="scaffold">
+                    <h1 className='mix-blend-difference'>Contact Me</h1>
+                    <p>I'm always open to new projects, collaborations, or just a friendly chat about tech and games.</p>
+                    <p>
+                        You can reach me at:
+                        <ul>
+                            <li>Email: <a href="mailto:kunetics888@gmail.com">kunetics888@gmail.com</a></li>
+                            <li>GitHub: <a href="https://github.com/evilbocchi">evilbocchi</a></li>
+                            <li>Discord: <a href="https://discord.com/users/antivivi">antivivi</a></li>
+                        </ul>
+                    </p>
+                    <div className='scaffold-spacing'></div>
                 </div>
                 <div className="scaffold"></div>
                 <div className="scaffold"></div>
 
-            </div>
-
-
-            <div className='max-w-7/12 mx-auto mix-blend-difference'>
-
-            </div>
-
-            {/* Profile container with animated entrance */}
-            <div
-                ref={profileRef}
-                className={`relative z-10 flex flex-col items-center transform transition-all duration-1000 mix-blend-container parallax-element ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-                    }`}
-            >
-                {/* Social icons with hover effect */}
-                <div className="flex gap-6 mb-12 relative z-10">
-                    <a
-                        href="https://github.com/evilbocchi"
-                        className="text-3xl text-gray-300 hover:text-[#00ffff] transition-all duration-300 hover:scale-125"
-                        aria-label="GitHub"
-                    >
-                        <FaGithub />
-                    </a>
-                    <a
-                        href="https://linkedin.com/in/zhongjunjieelton"
-                        className="text-3xl text-gray-300 hover:text-[#ff00ff] transition-all duration-300 hover:scale-125"
-                        aria-label="LinkedIn"
-                    >
-                        <FaLinkedin />
-                    </a>
+                <div className="scaffold"></div>
+                <div className="scaffold"></div>
+                <div className="scaffold">
+                    <h1 className='mix-blend-difference'>Thanks for Visiting!</h1>
+                    <p>
+                        I hope you enjoyed learning about my work and projects. If you have any questions or just want to say hi, feel free to reach out!
+                    </p>
+                    <div className='scaffold-spacing'></div>
                 </div>
-
-                {/* Call to action buttons with neon hover effect */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-xl mt-2">
-                    <Link
-                        to="/about"
-                        className="relative neon-border glass-effect py-3 px-6 text-center font-semibold text-white group overflow-hidden"
-                    >
-                        <span className="relative z-10 group-hover:text-white transition-colors">About Me</span>
-                        <span className="absolute inset-0 bg-gradient-to-r from-[#00ffff] to-[#ff00ff] opacity-0 group-hover:opacity-20 transition-opacity"></span>
-                    </Link>
-                    <Link
-                        to="/projects"
-                        className="relative neon-border glass-effect py-3 px-6 text-center font-semibold text-white group overflow-hidden"
-                    >
-                        <span className="relative z-10 group-hover:text-white transition-colors">View Projects</span>
-                        <span className="absolute inset-0 bg-gradient-to-r from-[#ff00ff] to-[#ffff00] opacity-0 group-hover:opacity-20 transition-opacity"></span>
-                    </Link>
-                </div>
+                <div className="scaffold"></div>
             </div>
-
-            {/* Tech stack section */}
-            <div className="py-16 px-4 relative overflow-hidden">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-12 text-center reveal-on-scroll">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ffff] to-[#ff00ff]">
-                            Tech Stack
-                        </span>
-                    </h2>
-
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 reveal-on-scroll">
-                        {[
-                            "React", "TypeScript", "Next.js", "Node.js",
-                            "TailwindCSS", "GraphQL", "MongoDB", "AWS"
-                        ].map((tech, index) => (
-                            <div
-                                key={tech}
-                                className="glass-effect p-4 aspect-square flex items-center justify-center text-center card-hover reveal-on-scroll"
-                                style={{ animationDelay: `${index * 0.1}s` }}
-                            >
-                                <span className="font-medium text-lg">{tech}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            <footer className="glass-effect border-t border-white/10 text-gray-400 py-6 text-center">
-                <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+            <footer className="glass-effect border-t border-white /10 text-gray-400 py-6 text-center">
+                <p>© {new Date().getFullYear()} evilbocchi. All rights reserved.</p>
             </footer>
         </div>
     );
