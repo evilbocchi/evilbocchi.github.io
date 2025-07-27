@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import PassionEffortPlot from './PassionEffortPlot';
 
 const HomePage = () => {
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -229,6 +230,19 @@ const HomePage = () => {
                         </li>
                     </ul>
                 </div>
+                <div className="scaffold"></div>
+
+                <div className="scaffold"></div>
+                <div className="scaffold">
+                    <h1 className='mix-blend-difference'>Project Visualization</h1>
+                    <p>
+                        Here's an interactive visualization of my projects plotted by passion level and effort investment. 
+                        Each point represents a project I've worked on, sized by impact and colored uniquely.
+                    </p>
+                    <PassionEffortPlot />
+                    <div className='scaffold-spacing'></div>
+                </div>
+                <div className="scaffold"></div>
                 <div className="scaffold"></div>
 
                 <div className="scaffold"></div>
