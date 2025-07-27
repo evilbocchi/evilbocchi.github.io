@@ -233,7 +233,7 @@ const HomePage = () => {
                 <div className="scaffold"></div>
 
                 <div className="scaffold"></div>
-                <div className="scaffold">
+                <div className="scaffold col-span-2">
                     <h1 className='mix-blend-difference'>Project Visualization</h1>
                     <p>
                         Here's an interactive visualization of my projects plotted by passion level and effort investment. 
@@ -242,7 +242,6 @@ const HomePage = () => {
                     <PassionEffortPlot />
                     <div className='scaffold-spacing'></div>
                 </div>
-                <div className="scaffold"></div>
                 <div className="scaffold"></div>
 
                 <div className="scaffold"></div>
