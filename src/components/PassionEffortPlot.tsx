@@ -15,11 +15,12 @@ interface DataPoint {
 const PassionEffortPlot = () => {
     const plotRef = useRef<HTMLDivElement>(null);
     const [dataPoints, setDataPoints] = useState<DataPoint[]>([
-        { x: 9, y: 10, text: 'JME<br>Roblox Tycoon Game<br>1M+ visits', marker: { color: '#ff6b6b', size: 15 } },
+        { x: 9, y: 9, text: 'JME<br>Roblox Tycoon Game<br>1M+ visits', marker: { color: '#ff6b6b', size: 15 } },
         { x: 8, y: 7, text: 'Monsters Awakening<br>Dungeon RPG Game', marker: { color: '#4ecdc4', size: 12 } },
-        { x: 7, y: 9, text: 'AlyaNum<br>High-Performance Lua Library', marker: { color: '#45b7d1', size: 12 } },
-        { x: 8, y: 6, text: 'thenilworld<br>Open-World RPG (In Development)', marker: { color: '#96ceb4', size: 10 } },
-        { x: 6, y: 8, text: 'Portfolio Website<br>You are here!', marker: { color: '#ffeaa7', size: 11 } },
+        { x: 7, y: 8, text: 'AlyaNum<br>High-Performance Big Number Lua Library', marker: { color: '#45b7d1', size: 12 } },
+        { x: 4, y: 8, text: 'SerikaNum<br>High-Performance Big Number Lua Library', marker: { color: '#ffffff', size: 12 } },
+        { x: 7, y: 6, text: 'thenilworld<br>Open-World RPG (In Development)', marker: { color: '#96ceb4', size: 10 } },
+        { x: 6, y: 6, text: 'Portfolio Website<br>You are here!', marker: { color: '#ffeaa7', size: 11 } },
     ]);
 
     const initializePlot = useCallback(() => {
@@ -80,18 +81,6 @@ const PassionEffortPlot = () => {
                 color: '#ffffff'
             },
             margin: { t: 60, r: 40, b: 60, l: 60 },
-            annotations: [
-                {
-                    x: 8.5,
-                    y: 1,
-                    text: 'Click to add your own project!',
-                    showarrow: false,
-                    font: {
-                        color: 'rgba(255, 255, 255, 0.7)',
-                        size: 12
-                    }
-                }
-            ]
         };
 
         const config = {
@@ -149,8 +138,6 @@ const PassionEffortPlot = () => {
             />
             <p className="text-sm text-gray-400 mt-4 text-center">
                 Interactive scatter plot showing the relationship between passion and effort in my projects.
-                <br />
-                <span className="text-xs">Click anywhere on the plot to add your own project point!</span>
             </p>
         </div>
     );
