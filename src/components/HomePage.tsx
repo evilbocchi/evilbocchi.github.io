@@ -99,15 +99,17 @@ const HomePage = () => {
                         visualizing data, or crafting immersive game worlds, I thrive on turning
                         ideas into interactive experiences.
                     </p>
+                    <br></br>
                     <p>
                         My journey has taken me through:
                         <ul>
-                            <li>AI & Machine Learning - Building models that predict, classify, and generate.</li>
-                            <li>Game Development - Designing games played by hundreds of thousands, focusing on unique mechanics and player engagement.</li>
-                            <li>Data Visualization - Making data come alive through dashboards and storytelling.</li>
-                            <li>Full-Stack Projects - From backend logic to pixel-perfect UI/UX.</li>
+                            <li><b>AI & Machine Learning</b> - Building models that predict, classify, and generate.</li>
+                            <li><b>Game Development</b> - Designing games played by hundreds of thousands, focusing on unique mechanics and player engagement.</li>
+                            <li><b>Data Visualization</b> - Making data come alive through dashboards and storytelling.</li>
+                            <li><b>Full-Stack Projects</b> - From backend logic to pixel-perfect UI/UX.</li>
                         </ul>
                     </p>
+                    <br></br>
                     <p>
                         I believe in learning by doing, experimenting boldly, and sharing what I
                         discover. My projects are driven by curiosity and a desire to solve real
@@ -124,11 +126,13 @@ const HomePage = () => {
                     <blockquote className='italic font-cursive text-center'>
                         Build your money-making empire. Uncover the world of Obbysia.
                     </blockquote>
+                    <br></br>
                     <p>
                         JME is an immersive Roblox game where players create and expand their
                         own virtual empires. Designed for replayability and community engagement,
                         JME blends tycoon mechanics with unique challenges and a vibrant world.
                     </p>
+                    <br></br>
                     <b>Highlights:</b>
                     <ul>
                         <li><b>1M+ visits</b> and hundreds of thousands of unique players</li>
@@ -137,7 +141,9 @@ const HomePage = () => {
                         <li>Automated CI/CD pipeline using GitHub Actions for stable releases</li>
                         <li>Open-source with a welcoming contributor community</li>
                     </ul>
+                    <br></br>
                     <p><b>Tech Stack:</b> Lua, TypeScript, Roblox Studio</p>
+                    <br></br>
                     <b>What I Did:</b>
                     <ul>
                         <li>Led end-to-end development: game design, scripting, UI/UX, deployment, and updates</li>
@@ -145,6 +151,7 @@ const HomePage = () => {
                         <li>Managed community feedback and integrated feature requests</li>
                         <li>Maintained code quality and project stability with automated workflows</li>
                     </ul>
+                    <br></br>
                     <a href="https://github.com/evilbocchi/jme" className="text-blue-500 hover:underline">View on GitHub</a>
                     <div className='scaffold-spacing'></div>
                 </div>
@@ -154,9 +161,11 @@ const HomePage = () => {
                         <li>
                             <a href='https://github.com/Unreal-Works/monsters-awakening'>Monsters Awakening</a>: An innovative Roblox game featuring dungeons and monsters, featuring unique mechanics and engaging gameplay.
                         </li>
+                        <br></br>
                         <li>
                             <a href='https://github.com/evilbocchi/alyanum'>AlyaNum</a>: A big number library for Lua beating every other competitor in performance, yet has an easy-to-use API.
                         </li>
+                        <br></br>
                         <li>
                             <a href='https://github.com/Unreal-Works/thenilworld'>thenilworld</a>: An upcoming open-world RPG game on Roblox, featuring a world full of lore, quests, and adventures. Currently in development.
                         </li>
@@ -172,6 +181,7 @@ const HomePage = () => {
                         I love using tools that enhance my workflow and creativity. Here are some of my favorites:
                     </p>
                     <ul>
+                        <br></br>
                         <li>
                             <b>Programming Languages: </b>
                             Lua <img src='lua.png' alt='Lua Logo' className='inline-block align-text-bottom' />,
@@ -180,6 +190,7 @@ const HomePage = () => {
                             JavaScript <img src='javascript.png' alt='JavaScript Logo' className='inline-block align-text-bottom' />,
                             Java <img src='java.png' alt='Java Logo' className='inline-block align-text-bottom' />
                         </li>
+                        <br></br>
                         <li>
                             <b>Game Development: </b>
                             Roblox Studio <img src='roblox_studio.png' alt='Roblox Studio Logo' className='inline-block align-text-bottom' />,
@@ -187,6 +198,7 @@ const HomePage = () => {
                             Godot <img src='godot.png' alt='Godot Logo' className='inline-block align-text-bottom' />,
                             Unity <img src='unity.png' alt='Unity Logo' className='inline-block align-text-bottom' />
                         </li>
+                        <br></br>
                         <li>
                             <b>AI & Machine Learning: </b>
                             PyTorch <img src='pytorch.png' alt='PyTorch Logo' className='inline-block align-text-bottom' />,
@@ -195,6 +207,7 @@ const HomePage = () => {
                             Pandas <img src='pandas.png' alt='Pandas Logo' className='inline-block align-text-bottom' />,
                             Matplotlib <img src='matplotlib.png' alt='Matplotlib Logo' className='inline-block align-text-bottom' />
                         </li>
+                        <br></br>
                         <li>
                             <b>Web: </b>
                             React <img src='react.png' alt='React Logo' className='inline-block align-text-bottom' />,
@@ -203,31 +216,34 @@ const HomePage = () => {
                             Tailwind CSS <img src='tailwindcss.png' alt='Tailwind CSS Logo' className='inline-block align-text-bottom' />,
                             Express <img src='expressjs.png' alt='Express Logo' className='inline-block align-text-bottom' />
                         </li>
+                        <br></br>
                         <li>
                             <b>DevOps & Tools: </b>
                             GitHub Actions <img src='github_actions.png' alt='GitHub Actions Logo' className='inline-block align-text-bottom' />,
                             Docker <img src='docker.png' alt='Docker Logo' className='inline-block align-text-bottom' />,
                             VS Code <img src='vscode.png' alt='VS Code Logo' className='inline-block align-text-bottom' />
                         </li>
+                        <br></br>
                         <li>
                             <b>Databases: </b>
                             MySQL <img src='mysql.png' alt='MySQL Logo' className='inline-block align-text-bottom' />,
                             MongoDB <img src='mongodb.png' alt='MongoDB Logo' className='inline-block align-text-bottom' />,
-                            NoSQL <img src='nosql.png' alt='NoSQL Logo' className='inline-block align-text-bottom' />
                         </li>
+                        <br></br>
                         <li>
                             <b>Data Visualization: </b>
                             Plotly <img src='plotly.png' alt='Plotly Logo' className='inline-block align-text-bottom' />,
                             Tableau <img src='tableau.png' alt='Tableau Logo' className='inline-block align-text-bottom' />
                         </li>
+                        <br></br>
                         <li>
                             <b>Other Tools: </b>
                             Canva <img src='canva.png' alt='Canva Logo' className='inline-block align-text-bottom' />,
-                            Figma <img src='figma.png' alt='Figma Logo' className='inline-block align-text-bottom' />,
                             Blender <img src='blender.png' alt='Blender Logo' className='inline-block align-text-bottom' />,
                             OBS <img src='obs.png' alt='OBS Logo' className='inline-block align-text-bottom' />,
                             GIMP <img src='gimp.png' alt='GIMP Logo' className='inline-block align-text-bottom' />
                         </li>
+                        <br></br>
                     </ul>
                 </div>
                 <div className="scaffold"></div>
