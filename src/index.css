@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@tailwind utilities;
+@import "tailwindcss";
 
 @font-face {
     font-family: 'Supreme';
