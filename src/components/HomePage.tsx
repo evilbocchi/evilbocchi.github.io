@@ -81,7 +81,7 @@ const HomePage = () => {
 
             <div ref={logoPaddingRef} className='duration-1000'></div>
 
-            <div className="grid grid-cols-4 gap-0 scaffold-top-offset">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-0 scaffold-top-offset">
                 <div className="scaffold">
                     <div className="scaffold-spacing"></div>
                 </div>
@@ -233,7 +233,7 @@ const HomePage = () => {
                 <div className="scaffold"></div>
 
                 <div className="scaffold"></div>
-                <div className="scaffold col-span-2">
+                <div className="scaffold col-span-1 md:col-span-2">
                     <h1 className='mix-blend-difference'>Project Visualization</h1>
                     <p>
                         Here's an interactive visualization of my projects plotted by passion level and effort investment. 
