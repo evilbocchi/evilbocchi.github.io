@@ -66,7 +66,7 @@ function App() {
             rgba(255, 0, 255, 0.15), transparent)`
                     }}
                 ></div>
-                <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <main className="mx-auto">
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                     </Routes>

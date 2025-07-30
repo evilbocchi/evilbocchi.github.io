@@ -14,7 +14,7 @@ interface DataPoint {
 
 const PassionEffortPlot = () => {
     const plotRef = useRef<HTMLDivElement>(null);
-    const [dataPoints, setDataPoints] = useState<DataPoint[]>([
+    const [dataPoints] = useState<DataPoint[]>([
         { x: 9, y: 9, text: 'JME<br>Roblox Tycoon Game<br>1M+ visits', marker: { color: '#ff6b6b', size: 15 } },
         { x: 8, y: 7, text: 'Monsters Awakening<br>Dungeon RPG Game', marker: { color: '#4ecdc4', size: 12 } },
         { x: 7, y: 8, text: 'AlyaNum<br>High-Performance Big Number Lua Library', marker: { color: '#45b7d1', size: 12 } },
@@ -90,28 +90,6 @@ const PassionEffortPlot = () => {
         };
 
         Plotly.newPlot(plotRef.current, [trace], layout, config);
-
-        // Add click event listener for adding new points
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (plotRef.current as any).on('plotly_click', (data: { points: Array<{ x: number; y: number }> }) => {
-            const clickX = data.points[0].x;
-            const clickY = data.points[0].y;
-            
-            const projectName = prompt('Enter project name:');
-            if (projectName) {
-                const newPoint: DataPoint = {
-                    x: Math.round(clickX * 10) / 10,
-                    y: Math.round(clickY * 10) / 10,
-                    text: `${projectName}<br>Your Project`,
-                    marker: { 
-                        color: '#ddd6fe', 
-                        size: 10 
-                    }
-                };
-                
-                setDataPoints(prev => [...prev, newPoint]);
-            }
-        });
     }, [dataPoints]);
 
     useEffect(() => {
