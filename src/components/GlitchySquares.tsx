@@ -17,7 +17,7 @@ const GlitchySquares: React.FC<GlitchySquaresProps> = ({ cursorPosition }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [squares, setSquares] = useState<Square[]>([]);
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-    const squareSize = 20; // Size of each square in the grid - uniform for all squares
+    const squareSize = 40; // Size of each square in the grid - uniform for all squares
     const interactionRadius = 150; // Area around cursor that activates squares
     const colors = useMemo(() => ['#ff00ff', '#ee00ff', '#dd00ff', '#cc00ff', '#bb00ff', '#aa00ff', '#9900ff', '#8800ff'], []); // Pink to violet gradient
     const glitchInterval = useRef<NodeJS.Timeout | null>(null);
@@ -102,7 +102,7 @@ const GlitchySquares: React.FC<GlitchySquaresProps> = ({ cursorPosition }) => {
                                 ...square,
                                 active: true,
                                 // Use a gradient intensity for more visual interest
-                                opacity: 0.3 + Math.random() * 0.3,
+                                opacity: 0.1 + Math.random() * 0.2,
                                 color: colors[Math.floor(Math.random() * colors.length)],
                                 transitionDelay: transDelay,
                                 transitionDuration: transDuration
@@ -205,7 +205,7 @@ const GlitchySquares: React.FC<GlitchySquaresProps> = ({ cursorPosition }) => {
                     return {
                         ...square,
                         active: true,
-                        opacity: Math.max(0.5, 1 - distance / interactionRadius),
+                        opacity: Math.max(0.2, 0.5 - distance / interactionRadius),
                         color: colors[colorIndex],
                         transitionDelay: transDelay,
                         transitionDuration: transDuration
