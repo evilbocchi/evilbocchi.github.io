@@ -27,7 +27,7 @@ const HomePage = () => {
             // }
 
             if (backgroundRef.current) {
-                backgroundRef.current.style.transform = `translate3d(0, ${scrollY * -0.05}px, 0)`;
+                backgroundRef.current.style.transform = `translate3d(0, ${scrollY * -0.02}px, 0)`;
             }
             if (logoRef.current) {
                 logoRef.current.style.transform = `translate3d(0, ${scrollY * -0.1}px, 0)`;
@@ -289,7 +289,7 @@ const HomePage = () => {
                 <div className="scaffold"></div>
             </div>
             <footer className="glass-effect border-t border-white /10 text-gray-400 py-6 text-center">
-                <p>© {new Date().getFullYear()} evilbocchi. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} evilbocchi. All rights reserved.&nbsp;<small><a href="https://www.deviantart.com/ricodz/art/Rain-747924753">(Background)</a></small></p>
             </footer>
         </div>
     );
