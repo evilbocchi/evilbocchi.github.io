@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "npm: install, build, and dev",
+            "type": "shell",
+            "command": "if not exist node_modules (npm install && npm run build) && npm run dev",
+            "windows": {
+                "command": "if (-not (Test-Path \"node_modules\")) { npm install; npm run build }; npm run dev"
+            },
+            "linux": {
+                "command": "if [ ! -d node_modules ]; then npm install && npm run build; fi && npm run dev"
+            },
+            "osx": {
+                "command": "if [ ! -d node_modules ]; then npm install && npm run build; fi && npm run dev"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "isBackground": true,
+            "presentation": {
+                "reveal": "never",
+                "group": "watchers",
+                "panel": "dedicated"
+            },
+        }
+    ]
+}
